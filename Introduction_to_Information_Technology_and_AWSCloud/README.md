@@ -579,6 +579,27 @@ For the latest information about the Availability Zones and AWS Regions in the A
 For more information about AWS topics in general, see the [AWS Documentation.](https://docs.aws.amazon.com/)
  
 
-## What are APIs, and why the term "Elasticity" is so common?
+## Links for the Cloud Consulting Ideas and How to Get Involved
 
-### API: Application programming interface
+- AWS Well-Architected Framework
+
+  - AWS Well-Architected helps cloud architects build secure, high-performing, resilient, and efficient infrastructure for a variety of applications and workloads. Built around six pillars—operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability—AWS Well-Architected provides a consistent approach for customers and AWS Partners to evaluate architectures and implement scalable designs.
+
+- AWS Well-Architected Tool
+  - The AWS Well-Architected Tool is designed to help cloud architects review the state of applications and workloads against architectural best practices, identify opportunities for improvement, and track progress over time.
+
+- AWS Partner Network
+  - The AWS Partner Network (APN) is a global community of partners that offers programs, expertise, and resources to build, market, and sell customer offerings. The APN features 100,000 partners from more than 150 countries. AWS Partners help customers make full use of AWS offerings and accelerate their journey to the cloud. Together, partners and AWS can provide innovative solutions, solve technical challenges, win deals, and deliver value to their mutual customers.
+
+- AWS Events
+  - AWS hosts events, both online and in-person, to bring the cloud computing community together. At these events, participants can connect, collaborate, and learn from AWS experts.
+
+- AWS Heroes
+  - The AWS Heroes program recognizes a worldwide group of AWS experts whose enthusiasm for knowledge-sharing has a real impact within the community. Heroes go above and beyond to share knowledge in various ways, both online and in person. Examples of online methods for knowledge sharing include such social media, blog posts, open source projects, videos, and forums; and examples of in-person methods include conferences, workshops, and user-group events.
+
+## AWS Cloud in action
+- Objects are stored in buckets
+- Unlimited object storage per bucket
+- Object size can be up to 5TB per object
+- Objects can be any file type
+- Objects are accessible through HTTP
