@@ -603,3 +603,24 @@ For more information about AWS topics in general, see the [AWS Documentation.](h
 - Object size can be up to 5TB per object
 - Objects can be any file type
 - Objects are accessible through HTTP
+
+## Glossary of Terms
+### Application prograaming interface (API)
+A set of rules and protocols that define how different software applications can communicate and interact with each other. APIs make it possible to exchange and integrate data between systems.
+
+### Guest OS
+The operating system (OS) of a virtual machine (VM)
+
+### Hypervisor
+Software that gives an operating system the ability to run virtual machines on a single host.
+
+### Operating system (OS)
+A software program that manages and controls the resources and operations of a computer. The OS provides a user interface and facilitates the running of other software applications.
+
+### Process
+An instance of a program or application that is currently running on a computer;.
+
+### Thread
+A single sequence of instructions within a process that can be executed independently. Threads make it possible to execute multiple tasks in a program concurrently, improving efficiency and responsiveness in multithreaded applications.
+
+### Virtual machine (VM)
