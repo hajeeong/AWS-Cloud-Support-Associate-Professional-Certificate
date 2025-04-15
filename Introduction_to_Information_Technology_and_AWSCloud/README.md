@@ -624,3 +624,4 @@ An instance of a program or application that is currently running on a computer;
 A single sequence of instructions within a process that can be executed independently. Threads make it possible to execute multiple tasks in a program concurrently, improving efficiency and responsiveness in multithreaded applications.
 
 ### Virtual machine (VM)
+A virtual simulation of a physical computer that makes it possible for multiple operating systems or applications to run on a single physical machine. A VM provides isolation and flexibility in computing environments.
