@@ -37,7 +37,7 @@ Infrastructure, like data centers and networking connectivity, still exists as t
 ### REGIONS
 Regions are geographic locations worldwide where AWS hosts its data centers. AWS Regions are named after the location where they reside. For example, in the United States, there is a Region in Northern Virginia called the Northern Virginia Region and a Region in Oregon called the Oregon Region. There are Regions in Asia Pacific, Canada, Europe, the Middle East, and South America, and AWS continues to expand to meet the needs of its customers.Each AWS Region is associated with a geographical name and a Region code.
 
-![Regions](Regions.png)
+![Regions](Resources/Regions.png)
 
 Here are a few examples of Region codes:
 
@@ -59,7 +59,7 @@ Service availability. Some services may not be available in some Regions. The AW
 Data compliance. Enterprise companies often need to comply with regulations that require customer data to be stored in a specific geographic territory. If applicable, you should choose a Region that meets your compliance requirements.
 
 ### AVAILABILITY ZONES
-![Availability Zone](Availability_zone.png)
+![Availability Zone](Resources/Availability_zone.png)
 
 Inside every Region is a cluster of Availability Zones (AZ). An AZ consists of one or more data centers with redundant power, networking, and connectivity. These data centers operate in discrete facilities with undisclosed locations. They are connected using redundant high-speed and low-latency links.AZs also have a code name. Since they’re located inside Regions, they can be addressed by appending a letter to the end of the Region code name. For example:
 
@@ -74,7 +74,7 @@ Depending on the AWS Service you use, your resources are either deployed at the 
 
 ### MAINTAIN RESILIENCY
 To keep your application available, you need to maintain high availability and resiliency. A well-known best practice for cloud architecture is to use Region-scoped, managed services. These services come with availability and resiliency built in.When that is not possible, make sure the workload is replicated across multiple AZs. At a minimum, you should use two AZs. If one entire AZ fails, your application will have infrastructure up and running in at least a second AZ to take over the traffic.
-![Azs](AZs.png)
+![Azs](Resources/AZs.png)
 
 ## Interacting with AWS
 
@@ -82,7 +82,7 @@ Every action you make in AWS is an API call that is authenticated and authorized
 
 ### THE AWS MANAGEMENT CONSOLE
 One way to manage cloud resources is through the web-based console, where you log in and click on the desired service. This can be the easiest way to create and manage resources when you’re first begin working with the cloud. Below is a screenshot that shows the landing page when you first log into the AWS Management Console.
-![management console](management_console.png)
+![management console](Resources/management_console.png)
 The services are placed in categories, such as compute, database, storage and security, identity and compliance.On the upper right corner is the Region selector. If you click it and change the Region, you will make requests to the services in the chosen Region. The URL changes, too. Changing the Region directs the browser to make requests to a whole different AWS Region, represented by a different subdomain.
 
 ### THE AWS COMMAND LINE INTERFACE (CLI)
@@ -117,7 +117,7 @@ print(response)
 
 ## Security and the AWS Shared Responsibility Model
 When you begin working with the AWS Cloud, managing security and compliance is a shared responsibility between AWS and you. To depict this shared responsibility, AWS created the shared responsibility model. This distinction of responsibility is commonly referred to as security of the cloud, versus security in the cloud.
-![Responsibility](reponsibility.png)
+![Responsibility](Resources/reponsibility.png)
 
 ### WHAT IS AWS RESPONSIBLE FOR?
 AWS is responsible for security of the cloud. This means AWS is required to protect and secure the infrastructure that runs all the services offered in the AWS Cloud. AWS is responsible for:
@@ -128,7 +128,7 @@ Managing the hardware, software, and networking components that run AWS services
 
 The level of responsibility AWS has depends on the service. AWS classifies services into three different categories. The following table provides information about each, as well as the AWS responsibility.
 
-![table1](table1.png)
+![table1](Resources/table1.png)
 
 **Note**
 
@@ -137,7 +137,7 @@ Container services refer to AWS abstracting application containers behind the sc
 ### WHAT IS THE CUSTOMER RESPONSIBLE FOR?
 You’re responsible for security in the cloud. When using any AWS service, you’re responsible for properly configuring the service and your applications, as well as ensuring your data is secure.The level of responsibility you have depends on the AWS service. Some services require you to perform all the necessary security configuration and management tasks, while other more abstracted services require you to only manage the data and control access to your resources. Using the three categories of AWS services, you can determine your level of responsibility for each AWS service you use.
 
-![table2](table2.png)
+![table2](Resources/table2.png)
 
 Due to the varying level of effort, it’s important to consider which AWS service you use and review the level of responsibility required to secure the service. It’s also important to review how the shared security model aligns with the security standards in your IT environment, as well as any applicable laws and regulations.It’s important to note that you maintain complete control of your data and are responsible for managing the security related to your content. Here are some examples of your responsibilities in context.
 
@@ -218,7 +218,7 @@ If you enable MFA on your root user, you are required to present a piece of iden
 ### Review Supported MFA Devices
 AWS supports a variety of MFA mechanisms, such as virtual MFA devices, hardware devices, and Universal 2nd Factor (U2F) security keys. For instructions on how to set up each method, check out the Resources section.
 
-![table3](table3.png)
+![table3](Resources/table3.png)
 
 ## Introduction to AWS Identity and Access Management
 
@@ -334,7 +334,7 @@ After looking at the JSON, you can see that this policy allows the IAM user to c
 ### UNDERSTAND POLICY STRUCTURE
 When creating a policy, it is required to have each of the following elements inside a policy statement.
 
-![table4](table4.png)
+![table4](Resources/table4.png)
 
 ## Role Based Access in AWS
 
@@ -450,14 +450,14 @@ The first building block you need to host an application is a server. Servers of
 
 To run an HTTP server on AWS, you need to find a service that provides compute power in the AWS Management Console. You can log into the console and view the complete list of AWS compute services.
 
-![Compute Service](Compute.png)
+![Compute Service](Resources/Compute.png)
 
 ### Choose the Right Compute Option
 If you’re responsible for setting up servers on AWS to run your infrastructure, you have many compute options. You need to know which service to use for which use case. At a fundamental level, there are three types of compute options: virtual machines, container services, and serverless. If you’re coming to AWS with prior infrastructure knowledge, a virtual machine can often be the easiest compute option in AWS to understand. This is because a virtual machine emulates a physical server and allows you to install an HTTP server to run your applications. To run these virtual machines, you install a hypervisor on a host machine. This hypervisor provisions the resources to create and run your virtual machines.In AWS, these virtual machines are called Amazon Elastic Compute Cloud or Amazon EC2. Behind the scenes, AWS operates and manages the host machines and the hypervisor layer. AWS also installs the virtual machine operating system, called the guest operating system.Some AWS compute services use Amazon EC2 or use virtualization concepts under the hood, therefore it is best to understand this service first before moving on to container services and serverless compute. 
 
 ## Introduction to Amazon Elastic Compute Cloud
 ### What Is Amazon EC2?
-![EC2](ec2_icon.png)
+![EC2](Resources/ec2_icon.png)
 
 Amazon EC2 is a web service that provides secure, resizable compute capacity in the cloud. It allows you to provision virtual servers called EC2 instances. Although AWS uses the phrase “web service” to describe it, it doesn’t mean that you are limited to running just web servers on your EC2 instances. You can create and manage these instances through the AWS Management Console, the AWS Command Line Interface (CLI), AWS Software Development Kits (SDKs), or through automation tools and infrastructure orchestration services.In order to create an EC2 instance, you need to define:
 
@@ -475,7 +475,7 @@ EC2 instances are live instantiations of what is defined in an AMI, much like a 
 
 A Class is something you model and define, while an object is something you interact with. In this case, the AMI is how you model and define your instance, while the EC2 instance is the entity you interact with, where you can install your web server, and serve your content to users.When you launch a new instance, AWS allocates a virtual machine that runs on a hypervisor. Then the AMI you selected is copied to the root device volume, which contains the image used to boot the volume. In the end, you get a server you can connect to and install packages and any additional software. In this case, you install a web server along with the properly configured source code of your employee directory app. 
 
-![Relationship](relationship.png)
+![Relationship](Resources/relationship.png)
 
 One advantage of using AMIs is that they are reusable. 
 
@@ -485,7 +485,7 @@ If you wanted to create a second EC2 instance with the same configurations, how 
 
 The second, better option, is to create an AMI from your running instance and use this AMI to start a new instance. This way, your new instance will have all the same configurations as your current instance, because the configurations set in the AMIs are the same.
 
-![Relationship2](relationship2.png)
+![Relationship2](Resources/relationship2.png)
 
 Where Can You Find AMIs?
 You can select an AMI from the following categories.
@@ -502,7 +502,7 @@ Build your own custom image with EC2 Image Builder.
 
 Each AMI in the AWS Management Console has an AMI ID, which is prefixed by “ami-”, followed by a random hash of numbers and letters. These IDs are unique to each AWS region.
 
-![AMI](AMI.png)
+![AMI](Resources/AMI.png)
 
 ## Amazon EC2 Instance Lifecycle
 Now that you know how to select an operating system for your EC2 instance, it’s time to choose other configurations to create your EC2 instance, such as the instance type, network, and storage. For an application like the employee directory application, you need instances with enough capacity to run web servers and process incoming customer requests. Your instance sizing will depend on both the demands of your application and the anticipated size of your user base. Forecasting server capacity for an on-premises application requires difficult decisions involving significant up-front capital spending, while changes to the allocation of your cloud-based services can be made with a simple API call. Because of AWS’s pay-as-you-go model, you can match your infrastructure capacity to your application’s demand, instead of the other way around.
@@ -517,7 +517,7 @@ AWS offers a variety of instances that differ based on performance. Some instanc
 - large, which determines the amount of instance capacity.
 
 ### What Are Instance Families?
-![Instance Families](instance_families.png)
+![Instance Families](Resources/instance_families.png)
 
 ### Where Does Your EC2 Instance Live?
 By default, your EC2 instances are placed in a network called the default Amazon Virtual Private Cloud (VPC). This network was created so that you can easily get started with Amazon EC2 without having to learn how to create and configure a VPC. Any resource you put inside the default VPC will be public and accessible by the internet, so you shouldn’t place any customer data or private information inside of it. Once you get more comfortable with networking on AWS, you should change this default setting to choose your own custom VPCs and restrict access with additional routing and connectivity mechanisms. 
@@ -566,7 +566,7 @@ While containers are often referred to as a new technology, the idea started in 
 When you hear the word container, you may associate it with Docker. Docker is a popular container runtime that simplifies the management of the entire operating system stack needed for container isolation, including networking and storage. Docker makes it easy to create, package, deploy, and run containers.
 
 ### WHAT IS THE DIFFERENCE BETWEEN CONTAINERS AND VMS?
-![vm](Vm.png)
+![vm](Resources/Vm.png)
 Containers share the same operating system and kernel as the host they exist on, whereas virtual machines contain their operating system. Since each virtual machine has to maintain a copy of an operating system, there’s a degree of wasted space.A container is more lightweight. They spin up quicker, almost instantly. This difference in startup time becomes instrumental when designing applications that need to scale quickly during input/output (I/O) bursts.While containers can provide speed, virtual machines offer you the full strength of an operating system and offer more resources, like package installation, a dedicated kernel, and more.
 
 ### ORCHESTRATE CONTAINERS
@@ -585,11 +585,11 @@ This coordination is handled by a container orchestration service. AWS offers tw
 ### MANAGE CONTAINERS WITH AMAZON ELASTIC CONTAINER SERVICE (AMAZON ECS)
 Amazon ECS is an end-to-end container orchestration service that allows you to quickly spin up new containers and manage them across a cluster of EC2 instances.
 
-![ECS](ECS.png)
+![ECS](Resources/ECS.png)
 
 To run and manage your containers, you need to install the Amazon ECS Container Agent on your EC2 instances. This agent is open source and responsible for communicating back to the Amazon ECS service about cluster management details. You can run this agent on both Linux and Windows AMIs. An instance with the container agent installed is often called a container instance.
 
-![ECS](ECS2.png)
+![ECS](Resources/ECS2.png)
 
 Once the Amazon ECS container instances are up and running, you can perform actions that include, but are not limited to, launching and stopping containers, getting cluster state, scaling in and out, scheduling the placement of containers across your cluster, assigning permissions, and meeting availability requirements.
 
@@ -667,7 +667,7 @@ Amazon EC2 mode
 
 AWS Fargate mode
 
-![Run Task](run_task.png)
+![Run Task](Resources/run_task.png)
 
 AWS Fargate is a purpose-built serverless compute engine for containers. Fargate scales and manages the infrastructure, allowing developers to work on what they do best: application development.
 
@@ -685,7 +685,7 @@ AWS Lambda requires zero administration from the user. You upload your source co
 
 There are three primary components of a Lambda function: the trigger, code, and configuration.The code is source code, that describes what the Lambda function should run. This code can be authored in three ways.
 
-![How Lambda Works](lambda_work.png)
+![How Lambda Works](Resources/lambda_work.png)
 
 - You create the code from scratch.
 
@@ -766,7 +766,7 @@ Here is an example of a 32-bit address in binary format:
 Typically, you don’t see an IP address in this binary format. Instead, it’s converted into decimal format and noted as an Ipv4 address. 
 
 In the diagram below, the 32 bits are grouped into groups of 8 bits, also called octets. Each of these groups is converted into decimal format separated by a period.
-![IPV4](IPV4.png) 
+![IPV4](Resources/IPV4.png) 
 In the end, this is what is called an Ipv4 address. This is important to know when trying to communicate to a single computer. But remember, you’re working with a network. This is where CIDR Notation comes in.
 
 ### USE CIDR NOTATION
@@ -781,7 +781,7 @@ CIDR notation looks like this:
 
 It begins with a starting IP address and is separated by a forward slash (the “/” character) followed by a number. The number at the end specifies how many of the bits of the IP address are fixed. In this example, the first 24 bits of the IP address are fixed. The rest are flexible. 
 
-![CIDR](CIDR.png)
+![CIDR](Resources/CIDR.png)
 
 32 total bits subtracted by 24 fixed bits leaves 8 flexible bits. Each of these flexible bits can be either 0 or 1, because they are binary. That means you have two choices for each of the 8 bits, providing 256 IP addresses in that IP range. 
 
@@ -800,7 +800,7 @@ A VPC is an isolated network you create in the AWS cloud, similar to a tradition
 
 Using this information, AWS will provision a network and IP addresses for that network.    
 
-![VPC](VPC.png)
+![VPC](Resources/VPC.png)
 
 Create a Subnet After you create your VPC, you need to create subnets inside of this network. Think of subnets as smaller networks inside your base network—or virtual area networks (VLANs) in a traditional, on-premises network. In an on-premises network, the typical use case for subnets is to isolate or optimize network traffic. In AWS, subnets are used for high availability and providing different connectivity options for your resources. When you create a subnet, you need to choose three settings.
 
@@ -812,19 +812,19 @@ Create a Subnet After you create your VPC, you need to create subnets inside of 
 
 When you launch an EC2 instance, you launch it inside a subnet, which will be located inside the Availability Zone you choose.
 
-![VPC](VPC2.png)
+![VPC](Resources/VPC2.png)
 
 High Availability with A VPC When you create your subnets, keep high availability in mind. In order to maintain redundancy and fault tolerance, create at least two subnets configured in two different Availability Zones.   
 
 As you learned earlier in the trail, it’s important to consider that “everything fails all the time.” In this case, if one of these AZs fail, you still have your resources in another AZ available as backup.   
 
-![VPC](VPC3.png)
+![VPC](Resources/VPC3.png)
 
 Reserved IPs For AWS to configure your VPC appropriately, AWS reserves five IP addresses in each subnet. These IP addresses are used for routing, Domain Name System (DNS), and network management.  
 
 For example, consider a VPC with the IP range 10.0.0.0/22. The VPC includes 1,024 total IP addresses. This is divided into four equal-sized subnets, each with a /24 IP range with 256 IP addresses. Out of each of those IP ranges, there are only 251 IP addresses that can be used because AWS reserves five.  
 
-![Reserved IPs](Reserved_ips.png)
+![Reserved IPs](Resources/Reserved_ips.png)
 
 Since AWS reserves these five IP addresses, it can impact how you design your network. A common starting place for those who are new to the cloud is to create a VPC with a IP range of /16 and create subnets with a IP range of /24. This provides a large amount of IP addresses to work with at both the VPC and subnet level. 
 
@@ -843,7 +843,7 @@ A virtual private gateway allows you to connect your AWS VPC to another private 
 
 When you create a VPC, AWS creates a route table called the main route table. A route table contains a set of rules, called routes, that are used to determine where network traffic is directed. AWS assumes that when you create a new VPC with subnets, you want traffic to flow between them. Therefore, the default configuration of the main route table is to allow traffic between all subnets in the local network. Below is an example of a main route table:   
 
-![The Main Route Table](route_table.png)
+![The Main Route Table](Resources/route_table.png)
 
 There are two main parts to this route table.
 
@@ -856,17 +856,17 @@ There are two main parts to this route table.
 While the main route table controls the routing for your VPC, you may want to be more granular about how you route your traffic for specific subnets. For example, your application may consist of a frontend and a database. You can create separate subnets for these resources and provide different routes for each of them.
 
 If you associate a custom route table with a subnet, the subnet will use it instead of the main route table. By default, each custom route table you create will have the local route already inside it, allowing communication to flow between all resources and subnets inside the VPC. 
-![Custom Route Table](route_table2.png)
+![Custom Route Table](Resources/route_table2.png)
 
 ### Secure Your Subnets with Network ACLs
 
 Think of a network ACL as a firewall at the subnet level. A network ACL enables you to control what kind of traffic is allowed to enter or leave your subnet. You can configure this by setting up rules that define what you want to filter. Here’s an example.
 
-![Traffic](traffic.png)
+![Traffic](Resources/traffic.png)
 
 The default network ACL, shown in the table above, allows all traffic in and out of your subnet. To allow data to flow freely to your subnet, this is a good starting place.   However, you may want to restrict data at the subnet level. For example, if you have a web application, you might restrict your network to allow HTTPS traffic and remote desktop protocol (RDP) traffic to your web servers.
 
-![Traffic](traffic2.png)
+![Traffic](Resources/traffic2.png)
 
 Notice that in the network ACL example above, you allow inbound 443 and outbound range 1025-65535. That’s because HTTP uses port 443 to initiate a connection and will respond to an ephemeral port. Network ACL’s are considered stateless, so you need to include both the inbound and outbound ports used for the protocol. If you don’t include the outbound range, your server would respond but the traffic would never leave the subnet.   
 
@@ -876,17 +876,17 @@ Since network ACLs are configured by default to allow incoming and outgoing traf
 
 The next layer of security is for your EC2 Instances. Here, you can create a firewall called a security group. The default configuration of a security group blocks all inbound traffic and allows all outbound traffic.  
 
-![ECS2 instances](group.png)
+![ECS2 instances](Resources/group.png)
 
 You might be wondering: “Wouldn’t this block all EC2 instances from receiving the response of any customer requests?” Well, security groups are stateful, meaning they will remember if a connection is originally initiated by the EC2 instance or from the outside and temporarily allow traffic to respond without having to modify the inbound rules.   
 
 If you want your EC2 instance to accept traffic from the internet, you’ll need to open up inbound ports. If you have a web server, you may need to accept HTTP and HTTPS requests to allow that type of traffic in through your security group. You can create an inbound rule that will allow port 80 (HTTP) and port 443 (HTTPS) as shown below. 
 
-![HTTP](HTTP.png)
+![HTTP](Resources/HTTP.png)
 
 You learned in a previous unit that subnets can be used to segregate traffic between computers in your network. Security groups can be used to do the same thing. A common design pattern is organizing your resources into different groups and creating security groups for each to control network communication between them.   
 
-![Availability Zone 1](zone.png)
+![Availability Zone 1](Resources/zone.png)
 
 This example allows you to define three tiers and isolate each tier with the security group rules you define. In this case, you only allow internet traffic to the web tier over HTTPS, Web Tier to Application Tier over HTTP, and Application tier to Database tier over MySQL. This is different from traditional on-premises environments, in which you isolate groups of resources via VLAN configuration. In AWS, security groups allow you to achieve the same isolation without tying it to your network. 
 
@@ -936,4 +936,510 @@ Ensure that your personal or corporate network does not have restrictions blocki
 
 Ensure that your application code is correctly deployed and running. Check the application's logs to diagnose any runtime errors. Also, make sure the web server (e.g., Apache, Nginx) is installed and running.
 # Module 3: Storage and Databases on AWS
+## Storage Types on AWS
+AWS storage services are grouped into three different categories: block storage, file storage, and object storage.
+
+### File Storage
+
+You may be familiar with file storage if you’ve interacted with file storage systems like Windows File Explorer or Finder on MacOS. You place your files in a tree-like hierarchy that consists of folders and subfolders. For example, if you have hundreds of cat photos on your laptop, you may want to create a folder called Cat photos, and place those images inside that folder to organize them. Since you know these images will be used in an application, you may want to place the cat photos folder inside another folder called Application files.
+
+Each file has metadata such as file name, file size, and the date the file was created. The file also has a path, for example, computer/Application_files/Cat_photos/cats-03.png. When you need to retrieve a file, your system can use the path to find it in the file hierarchy.
+
+File storage is ideal when you require centralized access to files that need to be easily shared and managed by multiple host computers. Typically, this storage is mounted onto multiple hosts and requires file locking and integration with existing file system communication protocols.Common use cases for file storage include:
+
+- Large content repositories
+
+- Development environments
+
+- User home directories
+
+### Block Storage
+
+While file storage treats files as a singular unit, block storage splits files into fixed-size chunks of data called blocks that have their own addresses. Since each block is addressable, blocks can be retrieved efficiently.
+
+When data is requested, these addresses are used by the storage system to organize the blocks in the correct order to form a complete file to present back to the requestor. Outside of the address, there is no additional metadata associated with each block. So, when you want to change a character in a file, you just change the block, or the piece of the file, that contains the character. This ease of access is why block storage solutions are fast and use less bandwidth. 
+
+![Block Storage](resources/block_storage.png)
+
+Since block storage is optimized for low-latency operations, it is a typical storage choice for high-performance enterprise workloads, such as databases or enterprise resource planning (ERP) systems, that require low-latency storage.
+
+### Object Storage
+
+Objects, much like files, are also treated as a single unit of data when stored. However, unlike file storage, these objects are stored in a flat structure instead of a hierarchy. Each object is a file with a unique identifier. This identifier, along with any additional metadata, is bundled with the data and stored.
+
+Changing just one character in an object is more difficult than with block storage. When you want to change one character in a file, the entire file must be updated.
+
+![Object Storage](resources/block_storage2.png)
+
+With object storage, you can store almost any type of data, and there is no limit to the number of objects stored, making it easy to scale. Object storage is generally useful when storing large data sets, unstructured files like media assets, and static assets, such as photos.
+
+Relate Back to Traditional Storage Systems
+
+If you’ve worked with storage on-premises, you may already be familiar with block, file, and object storage. Consider the following technologies and how they relate to systems you may have seen before.
+
+- Block storage in the cloud is analogous to direct-attached storage (DAS) or a storage area network (SAN).
+
+- File storage systems are often supported with a network attached storage (NAS) server.
+
+Adding more storage in a traditional data center environment is a more rigid process, as you need to purchase, install, and configure these storage solutions. With cloud computing, the process is more flexible. You can create, delete, and modify storage solutions all within a matter of minutes.
+
+## Amazon EC2 Instance Storage and Amazon Elastic Block Store
+
+### Amazon EC2 Instance Store 
+
+Amazon EC2 Instance Store provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer. This ties the lifecycle of your data to the lifecycle of your EC2 instance. If you delete your instance, the instance store is deleted as well. Due to this, instance store is considered ephemeral storage. Read more about it in the AWS documentation.
+
+Instance store is ideal if you are hosting applications that replicate data to other EC2 instances, such as Hadoop clusters. For these cluster-based workloads, having the speed of locally attached volumes and the resiliency of replicated data helps you achieve data distribution at high performance. It’s also ideal for temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content. 
+
+**Amazon Elastic Block Storage (Amazon EBS)**  As the name implies, Amazon EBS is a block-level storage device that you can attach to an Amazon EC2 instance. These storage devices are called Amazon EBS volumes. EBS volumes are essentially drives of a user-configured size attached to an EC2 instance, similar to how you might attach an external drive to your laptop. 
+
+EBS volumes act similarly to external drives in more than one way.
+
+- Most Amazon EBS volumes can only be connected with one computer at a time. Most EBS volumes have a one-to-one relationship with EC2 instances, so they cannot be shared by or attached to multiple instances at one time. Note: Recently, AWS announced the Amazon EBS multi-attach feature that enables volumes to be attached to multiple EC2 instances at one time. This feature is not available for all instance types and all instances must be in the same Availability Zone. Read more about this scenario in the EBS documentation.
+
+- You can detach an EBS volume from one EC2 instance and attach it to another EC2 instance in the same Availability Zone, to access the data on it.
+
+- The external drive is separate from the computer. That means, if an accident happens and the computer goes down, you still have your data on your external drive. The same is true for EBS volumes.
+
+- You’re limited to the size of the external drive, since it has a fixed limit to how scalable it can be. For example, you may have a 2 TB external drive and that means you can only have 2 TB of content on there. This relates to EBS as well, since volumes also have a max limitation of how much content you can store on the volume.
+
+### Scale Amazon EBS Volumes
+You can scale Amazon EBS volumes in two ways. 
+
+1. Increase the volume size, as long as it doesn’t increase above the maximum size limit. For EBS volumes, the maximum amount of storage you can have is 16 TB. That means if you provision a 5 TB EBS volume, you can choose to increase the size of your volume until you get to 16 TB.
+
+2. Attach multiple volumes to a single Amazon EC2 instance. EC2 has a one-to-many relationship with EBS volumes. You can add these additional volumes during or after EC2 instance creation to provide more storage capacity for your hosts.
+
+### Amazon EBS Use Cases
+Amazon EBS is useful when you need to retrieve data quickly and have data persist long-term. Volumes are commonly used in the following scenarios. 
+
+- Operating systems: Boot/root volumes to store an operating system. The root device for an instance launched from an Amazon Machine Image (AMI) is typically an Amazon EBS volume. These are commonly referred to as EBS-backed AMIs. 
+
+- Databases: A storage layer for databases running on Amazon EC2 that rely on transactional reads and writes.
+
+- Enterprise applications: Amazon EBS provides reliable block storage to run business-critical applications.
+
+- Throughput-intensive applications: Applications that perform long, continuous reads and writes.
+
+### Amazon EBS Volume Types
+![Volume Type Table](resources/volume_type_table.png)
+
+There are two main categories of Amazon EBS volumes: solid-state drives (SSDs) and hard-disk drives (HDDs). SSDs provide strong performance for random input/output (I/O), while HDDs provide strong performance for sequential I/O. AWS offers two types of each. The following chart can help you decide which EBS volume is the right option for your workload.
+
+### Benefits of Using Amazon EBS
+Here are the following benefits of using Amazon EBS (in case you need a quick cheat sheet).
+
+- High availability: When you create an EBS volume, it is automatically replicated within its Availability Zone to prevent data loss from single points of failure.
+
+- Data persistence: The storage persists even when your instance doesn’t.
+
+- Data encryption: All EBS volumes support encryption.
+
+- Flexibility: EBS volumes support on-the-fly changes. You can modify volume type, volume size, and input/output operations per second (IOPS) capacity without stopping your instance.
+
+- Backups: Amazon EBS provides you the ability to create backups of any EBS volume.
+
+### EBS Snapshots
+Errors happen. One of those errors is not backing up data, and then, inevitably losing that data. To prevent this from happening to you, you should back up your data—even in AWS. Since your EBS volumes consist of the data from your Amazon EC2 instance, you’ll want to take backups of these volumes, called snapshots. 
+
+EBS snapshots are incremental backups that only save the blocks on the volume that have changed after your most recent snapshot. For example, if you have 10 GB of data on a volume, and only 2 GB of data have been modified since your last snapshot, only the 2 GB that have been changed are written to Amazon Simple Storage Service (Amazon S3). 
+
+When you take a snapshot of any of your EBS volumes, these backups are stored redundantly in multiple Availability Zones using Amazon S3. This aspect of storing the backup in Amazon S3 will be handled by AWS, so you won’t need to interact with Amazon S3 to work with your EBS snapshots. You simply manage them in the EBS console (which is part of the EC2 console). 
+
+EBS snapshots can be used to create multiple new volumes, whether they’re in the same Availability Zone or a different one. When you create a new volume from a snapshot, it’s an exact copy of the original volume at the time the snapshot was taken. 
+
+## Object Storage with Amazon S3
+### WHAT IS AMAZON S3?
+
+Unlike Amazon EBS, Amazon S3 is a standalone storage solution that isn’t tied to compute. It enables you to retrieve your data from anywhere on the web. If you’ve ever used an online storage service to back up the data from your local machine, then you most likely have used a service similar to Amazon S3. The big difference between those online storage services and Amazon S3 is the storage type.
+
+Amazon S3 is an object storage service. Object storage stores data in a flat structure, using unique identifiers to look up objects when requested. An object is simply a file combined with metadata and that you can store as many of these objects as you’d like. All of these characteristics of object storage are also characteristics of Amazon S3. 
+
+### UNDERSTAND AMAZON S3 CONCEPTS
+
+In Amazon S3, you have to store your objects in containers called buckets. You can’t upload any object, not even a single photo, to S3 without creating a bucket first. When you create a bucket, you choose, at the very minimum, two things: the bucket name and the AWS Region you want the bucket to reside in. 
+
+The first part is choosing the Region you want the bucket to reside in. Typically, this will be a Region that you’ve used for other resources, such as your compute. When you choose a Region for your bucket, all objects you put inside that bucket are redundantly stored across multiple devices, across multiple Availability Zones. This level of redundancy is designed to provide Amazon S3 customers with 99.999999999% durability and 99.99% availability for objects over a given year.
+
+The second part is choosing a bucket name which must be unique across all AWS accounts. AWS stops you from choosing a bucket name that has already been chosen by someone else in another AWS account. Once you choose a name, that name is yours and cannot be claimed by anyone else unless you delete that bucket, which then releases the name for others to use. 
+
+AWS uses this name as part of the object identifier. In S3, each object is identified using a URL, which looks like this:
+
+![URL](resources/URL.png)
+
+After the http://, you see the bucket name. In this example, the bucket is named doc. Then, the identifier uses the service name, s3 and specifies the service provider amazonaws. After that, you have an implied folder inside the bucket called 2006-03-01 and the object inside the folder that is named AmazonS3.html. The object name is often referred to as the key name.
+
+Note, you can have folders inside of buckets to help you organize objects. However, remember that there’s no actual file hierarchy that supports this on the back end. It is instead a flat structure where all files and folders live at the same level. Using buckets and folders implies a hierarchy, which makes it easy to understand for the human eye.
+
+### S3 USE CASES
+
+Amazon S3 is one of the most widely used storage services, with far more use cases than could fit on one screen. The following list summarizes some of the most common ways you can use Amazon S3.
+
+- Backup and storage: S3 is a natural place to back up files because it is highly redundant. As mentioned in the last unit, AWS stores your EBS snapshots in S3 to take advantage of its high availability.
+
+- Media hosting: Because you can store unlimited objects, and each individual object can be up to 5 TBs, S3 is an ideal location to host video, photo, or music uploads.
+
+- Software delivery: You can use S3 to host your software applications that customers can download.
+
+- Data lakes: S3 is an optimal foundation for a data lake because of its virtually unlimited scalability. You can increase storage from gigabytes to petabytes of content, paying only for what you use.
+
+- Static websites: You can configure your bucket to host a static website of HTML, CSS, and client-side scripts.
+
+- Static content: Because of the limitless scaling, the support for large files, and the fact that you access any object over the web at any time, S3 is the perfect place to store static content.
+
+### CHOOSE THE RIGHT CONNECTIVITY OPTION FOR YOUR RESOURCES
+
+Everything in Amazon S3 is private by default. This means that all S3 resources, such as buckets, folders, and objects can only be viewed by the user or AWS account that created that resource. Amazon S3 resources are all private and protected to begin with.
+
+If you decide that you want everyone on the internet to see your photos, you can choose to make your buckets, folders, and objects public. Keep in mind that a public resource means that everyone on the internet can see it. Most of the time, you don’t want your permissions to be all or nothing. Typically, you want to be more granular about the way you provide access to your resources. 
+
+To be more specific about who can do what with your S3 resources, Amazon S3 provides two main access management features: IAM policies and S3 bucket policies.
+
+### UNDERSTAND IAM POLICIES
+
+Previously, you learned about creating and using IAM policies, and now you get to apply this to Amazon S3. When IAM policies are attached to IAM users, groups, and roles, the policies define which actions they can perform. IAM policies are not tied to any one AWS service and can be used to define access to nearly any AWS action. You should use IAM policies for private buckets when:
+
+- You have many buckets with different permission requirements. Instead of defining many different S3 bucket policies, you can use IAM policies instead.
+
+- You want all policies to be in a centralized location. Using IAM policies allows you to manage all policy information in one location.
+
+### UNDERSTAND S3 BUCKET POLICIES
+
+S3 bucket policies are similar to IAM policies, in that they are both defined using the same policy language in a JSON format. The difference is IAM policies are attached to users, groups, and roles, whereas S3 bucket policies are only attached to buckets. S3 bucket policies specify what actions are allowed or denied on the bucket.
+
+For example, if you have a bucket called employeebucket, you can attach an S3 bucket policy to it that allows another AWS account to put objects in that bucket.
+
+Or if you wanted to allow anonymous viewers to read the objects in employeebucket, then you can apply a policy to that bucket that allows anyone to read objects in the bucket using "Effect":Allow on the "Action:["s3:GetObject"]".
+
+Here’s an example of what that S3 bucket policy might look like.
+
+```
+{
+
+     "Version":"2012-10-17",
+
+     "Statement":[
+
+          {
+
+               "Sid":"PublicRead",
+
+               "Effect":"Allow",
+
+               "Principal": "*",
+
+               "Action":["s3:GetObject"],
+
+               "Resource":["arn:aws:s3:::employeebucket/*"]
+
+          }
+
+     ]
+
+}
+```
+
+S3 Bucket policies can only be placed on buckets, and cannot be used for folders or objects. However, the policy that is placed on the bucket applies to every object in that bucket. You should use S3 bucket policies when:
+
+- You need a simple way to do cross-account access to S3, without using IAM roles.
+
+- Your IAM policies bump up against the defined size limit. S3 bucket policies have a larger size limit.
+
+### ENCRYPT S3
+
+Amazon S3 reinforces encryption in transit (as it travels to and from Amazon S3) and at rest. To protect data at rest, you can use:
+
+- Server-side encryption: This allows Amazon S3 to encrypt your object before saving it on disks in its data centers and then decrypt it when you download the objects.
+
+- Client-side encryption: Encrypt your data client-side and upload the encrypted data to Amazon S3. In this case, you manage the encryption process, the encryption keys, and all related tools.
+
+To encrypt in transit, you can use client-side encryption or Secure Sockets Layer (SSL).
+
+### USE VERSIONING TO PRESERVE OBJECTS
+
+As you know, Amazon S3 identifies objects in part by using the object name. For example, when you upload an employee photo to S3, you may name the object employee.jpg and store it in a folder called employees. If you don’t use Amazon S3 versioning, anytime you upload an object called employee.jpg to the employees folder, it overwrites the original file. This can be an issue for several reasons.
+
+- employee.jpg is a common name for an employee photo object. You or someone else who has access to that bucket might not have intended to overwrite it, and now that you have, you no longer have access to the original file.
+
+- You may want to preserve different versions of employee.jpg. Without versioning, if you wanted to create a new version of employee.jpg, you would need to upload the object and choose a different name for it. Having several objects all with slight differences in naming variations may cause confusion and clutter in your bucket.
+
+So, what do you do? You use S3 versioning! Versioning enables you to keep multiple versions of a single object in the same bucket. This allows you to preserve old versions of an object without having to use different naming constructs, in case you need to recover from accidental deletions, accidental overwrites, or even application failures. Let’s see how this works. 
+
+If you enable versioning for a bucket, Amazon S3 automatically generates a unique version ID for the object being stored. In one bucket, for example, you can have two objects with the same key, but different version IDs, such as employeephoto.gif (version 111111) and employeephoto.gif (version 121212). Versioning-enabled buckets let you recover objects from accidental deletion or overwrite.
+
+- Deleting an object does not remove the object permanently. Instead, Amazon S3 puts a marker on the object that shows you tried to delete it. If you want to restore the object, you can remove this marker and it reinstates the object.
+
+- If you overwrite an object, it results in a new object version in the bucket. You still have access to previous versions of the object.
+
+### UNDERSTAND VERSIONING STATES
+
+Buckets can be in one of three states.
+
+- Unversioned (the default): No new or existing objects in the bucket have a version.
+
+- Versioning-enabled: This enables versioning for all objects in the bucket.
+
+- Versioning-suspended: This suspends versioning for new objects. All new objects in the bucket will not have a version. However, all existing objects keep their object versions.
+
+The versioning state applies to all of the objects in that bucket. Keep in mind that storage costs are incurred for all objects in your bucket and all versions of those objects. To reduce your S3 bill, you may want to delete previous versions of your objects that are no longer in use.
+
+### WHAT ARE AMAZON S3 STORAGE CLASSES?
+
+When you upload an object to Amazon S3 and you don’t specify the storage class, you’re uploading it to the default storage class—often referred to as standard storage. When you learned about Amazon S3 in previous units, you were learning about the standard storage class without even knowing it! S3 storage classes let you change your storage tier as your data characteristics change. For example, if you are now accessing your old photos infrequently, you may want to change the storage class those photos are stored in to save on costs. There are six S3 storage classes.
+
+- **Amazon S3 Standard:** This is considered general purpose storage for cloud applications, dynamic websites, content distribution, mobile and gaming applications, and big data analytics.
+
+- **Amazon S3 Intelligent-Tiering:** This tier is useful if your data has unknown or changing access patterns. S3 Intelligent-Tiering stores objects in two tiers, a frequent access tier and an infrequent access tier. Amazon S3 monitors access patterns of your data, and automatically moves your data to the most cost-effective storage tier based on frequency of access.
+
+- **Amazon S3 Standard-Infrequent Access (S3 Standard-IA):** S3 Standard-IA is for data that is accessed less frequently, but requires rapid access when needed. S3 Standard-IA offers the high durability, high throughput, and low latency of S3 Standard, with a low per-GB storage price and per-GB retrieval fee. This storage tier is ideal if you want to store long-term backups, disaster recovery files, and so on.
+
+- **Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA):** Unlike other S3 storage classes which store data in a minimum of three Availability Zones (AZs), S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA. S3 One Zone-IA is ideal for customers who want a lower-cost option for infrequently accessed data but do not require the availability and resilience of S3 Standard or S3 Standard-IA. It’s a good choice for storing secondary backup copies of on-premises data or easily re-creatable data.
+
+- **Amazon S3 Glacier Instant Retrieval:** Amazon S3 Glacier Instant Retrieval is an archive storage class that delivers the lowest-cost storage for long-lived data that is rarely accessed and requires retrieval in milliseconds.
+
+- **Amazon S3 Glacier Flexible Retrieval:** S3 Glacier Flexible Retrieval delivers low-cost storage, up to 10% lower cost (than S3 Glacier Instant Retrieval), for archive data that is accessed 1—2 times per year and is retrieved asynchronously.
+
+- **Amazon S3 Glacier Deep Archive:** S3 Glacier Deep Archive is Amazon S3’s lowest-cost storage class and supports long-term retention and digital preservation for data that may be accessed once or twice in a year. It is designed for customers—particularly those in highly regulated industries, such as the Financial Services, Healthcare, and Public Sectors—that retain data sets for 7 to 10 years or longer to meet regulatory compliance requirements.
+
+- **Amazon S3 Outposts:** Amazon S3 on Outposts delivers object storage to your on-premises AWS Outposts environment.
+
+### AUTOMATE TIER TRANSITIONS WITH OBJECT LIFECYCLE MANAGEMENT
+
+If you keep manually changing your objects, such as your employee photos, from storage tier to storage tier, you may want to look into automating this process using a lifecycle policy. When you define a lifecycle policy configuration for an object or group of objects, you can choose to automate two actions: transition and expiration actions.
+
+- **Transition actions** are used to define when you should transition your objects to another storage class.
+
+- **Expiration actions** define when objects expire and should be permanently deleted.
+
+For example, you might choose to transition objects to S3 Standard-IA storage class 30 days after you created them, or archive objects to the S3 Glacier storage class one year after creating them.
+
+The following use cases are good candidates for lifecycle management.
+
+- **Periodic logs:** If you upload periodic logs to a bucket, your application might need them for a week or a month. After that, you might want to delete them.
+
+- **Data that changes in access frequency:** Some documents are frequently accessed for a limited period of time. After that, they are infrequently accessed. At some point, you might not need real-time access to them, but your organization or regulations might require you to archive them for a specific period. After that, you can delete them.
+
+## Choose the Right Storage Service
+Here’s a recap of all the storage services mentioned so far. By the end of this reading, you should be able to better answer the question “Which storage service should I use?” for some of the more common scenarios.
+
+### Amazon EC2 Instance Store
+Instance store is ephemeral block storage. This is preconfigured storage that exists on the same physical server that hosts the EC2 instance and cannot be detached from Amazon EC2. You can think of it as a built-in drive for your EC2 instance. Instance store is generally well-suited for temporary storage of information that is constantly changing, such as buffers, caches, and scratch data. It is not meant for data that is persistent or long-lasting. If you need persistent long-term block storage that can be detached from Amazon EC2 and provide you more management flexibility, such as increasing volume size or creating snapshots, then you should use Amazon EBS. 
+
+### Amazon EBS
+Amazon EBS is meant for data that changes frequently and needs to persist through instance stops, terminations, or hardware failures. Amazon EBS has two different types of volumes: SSD-backed volumes and HDD-backed volumes.SSD-backed volumes have the following characteristics. 
+
+- Performance depends on IOPS (input/output operations per second).
+
+- Ideal for transactional workloads such as databases and boot volumes.
+
+HDD-backed volumes have the following characteristics: 
+
+- Performance depends on MB/s.
+
+- Ideal for throughput-intensive workloads, such as big data, data warehouses, log processing, and sequential data I/O.
+
+Here are a few important features of Amazon EBS that you need to know when comparing it to other services. 
+
+- It is block storage.
+
+- You pay for what you provision (you have to provision storage in advance).
+
+- EBS volumes are replicated across multiple servers in a single Availability Zone.
+
+- Most EBS volumes can only be attached to a single EC2 instance at a time.
+
+### Amazon S3
+If your data doesn’t change that often, Amazon S3 might be a more cost-effective and scalable storage solution. S3 is ideal for storing static web content and media, backups and archiving, data for analytics, and can even be used to host entire static websites with custom domain names.Here are a few important features of Amazon S3 to know about when comparing it to other services. 
+
+- It is object storage.
+
+- You pay for what you use (you don’t have to provision storage in advance).
+
+- Amazon S3 replicates your objects across multiple Availability Zones in a Region.
+
+- Amazon S3 is not storage attached to compute.
+
+### Amazon Elastic File System (Amazon EFS) and Amazon FSx
+In this module, you’ve already learned about Amazon S3 and Amazon EBS. You learned that S3 uses a flat namespace and isn’t meant to serve as a standalone file system. You also learned most EBS volumes can only be attached to one EC2 instance at a time. So, if you need file storage on AWS, which service should you use?For file storage that can mount on to multiple EC2 instances, you can use Amazon Elastic File System (Amazon EFS) or Amazon FSx. Use the following table for more information about each of these services. 
+
+| Service | Characteristic | More Information |
+| --- | --- | --- |
+| Amazon Elastic File System (EFS) | Fully managed NFS file system. | [EFS FAQs](https://aws.amazon.com/efs/faq/) |
+| Amazon FSx for Windows File Server | Fully managed file server built on Windows Server that supports the SMB protocol. | [FSx for Windows File Server FAQs](https://aws.amazon.com/fsx/windows/faqs/?nc=sn&loc=8) |
+| Amazon FSx for Lustre | Fully managed Lustre file system that integrates with S3. | [FSx for Lustre FAQs](https://aws.amazon.com/fsx/lustre/faqs/?nc=sn&loc=5) |
+
+## Explore Databases on AWS
+
+### UNDERSTANDING THE HISTORY BEHIND ENTERPRISE DATABASES
+Choosing a database used to be a straightforward decision. There were only a few options to choose from. In the past, you likely considered a few vendors and then inevitably chose one for all of your applications.
+
+Businesses often selected the database technology they were going to use, even before they fully understood their use case. Since the 1970s, the database most commonly selected by businesses was a **relational database.**
+
+## WHAT IS A RELATIONAL DATABASE?
+A relational database organizes data into tables. Data in one table can be linked to data in other tables to create relationships—hence, the relational part of the name.
+
+A table stores data in rows and columns. A row, often called a record, contains all information about a specific entry. Columns describe attributes of that entry. Here’s an example of three tables in a relational database.
+
+![Relational Database](resources/relational_db.png)
+
+This shows a table for books, a table for sales, and a table for authors. In the books table, each row includes the book ISBN, the title, the author, and the format. Each of these attributes is stored in its own column. The books table has something in common with the other two tables: the author attribute. That common column creates a relationship between the tables.
+
+The tables, rows, columns, and relationships between them is referred to as a **logical schema**. With relational databases, a schema is fixed. Once the database is operational, it becomes difficult to change the schema. This requires most of the data modeling to be done upfront before the database is active.
+
+### WHAT IS A RELATIONAL DATABASE MANAGEMENT SYSTEM?
+A relational database management system (RDBMS) lets you create, update, and administer a relational database. Here are some common examples of relational database management systems:
+
+- MySQL
+
+- PostgresQL
+
+- Oracle
+
+- SQL server
+
+- Amazon Aurora
+
+You communicate with most RDBMS by using Structured Query Language (SQL) queries. Here’s an example: SELECT * FROM table_name.
+
+This query selects all of the data from a particular table. However, the real power of SQL queries is in creating more complex queries that let you pull data from several tables to piece together patterns and answers to business problems. For example, querying the sales table and the book table together to see sales in relation to an author’s books. This is made possible by a join, which we talk about next.
+
+### THE BENEFITS OF USING A RELATIONAL DATABASE
+There are many benefits to using a relational database. A few of them are listed here.
+
+- **Joins:** You can join tables, enabling you to better understand relationships between your data.
+
+- **Reduced redundancy:** You can store data in one table and reference it from other tables instead of saving the same data in different places.
+
+- **Familiarity:** Relational databases have been a popular choice since the 1970s. Due to this popularity, technical professionals often have familiarity and experience with this type of database.
+
+- **Accuracy:** Relational databases ensure that your data is persisted with high integrity and adheres to the ACID (atomicity, consistency, isolation, durability) principle.
+
+### USE CASES FOR RELATIONAL DATABASES
+Much of the world runs on relational databases. In fact, they’re at the core of many mission-critical applications, some of which you may use in your day to day life. Here are some common use cases for relational databases.Applications that have a solid schema that doesn’t change often, such as:
+
+- Lift and shift applications that lifts an app from on-premises and shifts it to the cloud, with little or no modifications.
+
+Applications that need persistent storage that follows the ACID principle, such as:
+
+- Enterprise Resource Planning (ERP) applications
+
+- Customer Relationship Management (CRM) applications
+
+- Commerce and financial applications
+
+### CHOOSE BETWEEN UNMANAGED AND MANAGED DATABASES
+If you want to run a relational database on AWS, you first need to select how you want to run it: the unmanaged way or the managed way.
+
+The paradigm of managed versus unmanaged services is similar to the Shared Responsibility Model. The Shared Responsibility Model distinguishes between AWS’s and the customer’s security responsibility over a service. Similarly, managed versus unmanaged can be understood as a tradeoff between convenience and control.
+
+#### On-Premises Database
+
+Let’s say you operate a relational database on-premises (in your own data center). In this scenario, you are responsible for all aspects of operation, including the security and electricity of the data center, the management of the host machine, the management of the database on that host, as well as optimizing queries and managing customer data. You are responsible for absolutely everything, which means you have control over absolutely everything.
+
+##### Unmanaged Database
+![Unmanaged Database](resources/unmanaged_db.png)
+
+Now, let’s say you want to shift some of this work to AWS by running your relational database on Amazon EC2. If you host a database on Amazon EC2, AWS takes care of implementing and maintaining the physical infrastructure and hardware and installing the operating system of the EC2 instance. However, you’re still responsible for managing the EC2 instance, managing the database on that host, optimizing queries, and managing customer data.
+
+This is what is often referred to as the **unmanaged database** option on AWS. AWS is responsible for and has control over the hardware and underlying infrastructure, and you are responsible and have control over management of the host and database. 
+##### Managed Database
+![Managed Database](resources/managed_db.png)
+
+If you want to shift even more of the work to AWS, you can use a **managed database** service. These services provide the setup of both the EC2 instance and the database, and they provide systems for high availability, scalability, patching, and backups. However, you’re still responsible for database tuning, query optimization, and of course, ensuring that your customer data is secure. This provides you ultimate convenience, but you have the least amount of control compared to the two previous options.
+
+## Amazon Relational Database Service
+### What Is Amazon RDS?
+Amazon RDS enables you to create and manage relational databases in the cloud without the operational burden of traditional database management. For example, if you sell healthcare equipment and your goal is to be the number-one seller in the Pacific Northwest, building out a database doesn’t directly help you achieve that goal though having a database is necessary to achieve the goal.   Amazon RDS helps you offload some of this unrelated work of creating and managing a database. You can focus on the tasks that differentiate your application, instead of infrastructure-related tasks such as provisioning, patching, scaling, and restoring.  Amazon RDS supports most of the popular relational database management systems, ranging from commercial options, open source options, and even an AWS-specific option. Here are the supported Amazon RDS engines. 
+
+- Commercial: Oracle, SQL Server
+
+- Open Source: MySQL, PostgreSQL, MariaDB
+
+- Cloud Native: Amazon Aurora
+
+![Engine Options](resources/engined_options.png)
+
+Note: The cloud native option, Amazon Aurora, is a MySQL and PostgreSQL-compatible database built for the cloud. It is more durable, more available, and provides faster performance than the Amazon RDS version of MySQL and PostgreSQL. To learn more about Amazon Aurora, view the Amazon Aurora FAQs.  
+
+### Understand DB Instances
+Just like the databases that you would build and manage yourself, Amazon RDS is built off of compute and storage. The compute portion is called the DB (database) instance, which runs the database engine. Depending on the engine of the DB instance you choose, the engine will have different supported features and configurations. A DB instance can contain multiple databases with the same engine, and each database can contain multiple tables.  Underneath the DB instance is an EC2 instance. However, this instance is managed through the Amazon RDS console instead of the Amazon EC2 console. When you create your DB instance, you choose the instance type and size. Amazon RDS supports three instance families.
+
+- **Standard,** which include general-purpose instances
+
+- **Memory Optimized,** which are optimized for memory-intensive applications
+
+- **Burstable Performance,** which provides a baseline performance level, with the ability to burst to full CPU usage.
+
+![DB instance Size](resources/db_instance_size.png)
+
+The DB instance you choose affects how much processing power and memory it has. Not all of the options are available to you, depending on the engine that you choose. You can find more information about the DB instance types in the resources section of this unit.  Much like a regular EC2 instance, the DB instance uses Amazon Elastic Block Store (EBS) volumes as its storage layer. You can choose between three types of EBS volume storage.
+
+- General purpose (SSD)
+
+- Provisioned IOPS (SSD)
+
+- Magnetic storage (not recommended)
+
+![Storage](resources/storage.png)
+
+### Work with Amazon RDS in an Amazon Virtual Private Cloud
+When you create a DB instance, you select the Amazon Virtual Private Cloud (VPC) that your databases will live in. Then, you select the subnets that you want the DB instances to be placed in. This is referred to as a DB subnet group. To create a **DB subnet group**, you specify:
+
+- The Availability Zones (AZs) that include the subnets you want to add
+
+- The subnets in that AZ where your DB instance are placed
+
+The subnets you add should be private so they don’t have a route to the internet gateway. This ensures your DB instance, and the cat data inside of it, can only be reached by the app backend.  Access to the DB instance can be further restricted by using network access control lists (ACLs) and security groups. With these firewalls, you can control, at a granular level, what type of traffic you want to allow into your database.  Using these controls provide layers of security for your infrastructure. It reinforces that only the backend instances have access to the database.
+
+### Use AWS Identity and Access Management (IAM) Policies to Secure Amazon RDS
+Network ACLs and security groups allow you to dictate the flow of traffic. If you want to restrict what actions and resources your employees can access, you can use IAM policies.
+
+### Back Up Your Data
+You don’t want to lose any of that precious cat information. To take regular backups of your RDS instance, you can use: 
+
+- Automatic backups
+
+- Manual snapshots
+
+#### Automatic Backups 
+Automated backups are turned on by default. This backs up your entire DB instance (not just individual databases on the instance), and your transaction logs. When you create your DB instance, you set a backup window that is the period of time that automatic backups occur. Typically, you want to set these windows during a time when your database experiences little activity because it can cause increased latency and downtime.  
+
+You can retain your automated backups between 0 and 35 days. You might ask yourself, “Why set automated backups for 0 days?” The 0 days setting actually disables automatic backups from happening. Keep in mind that if you set it to 0, it will also delete all existing automated backups. This is not ideal, as the benefit of having automated backups is having the ability to do point-in-time recovery.    
+![Automated Backup](resources/backup.png)
+
+If you restore data from an automated backup, you have the ability to do point-in-time recovery. Point-in-time recovery creates a new DB instance using data restored from a specific point in time. This restoration method provides more granularity by restoring the full backup and rolling back transactions up to the specified time range.  
+
+#### Manual Snapshots 
+
+If you want to keep your automated backups longer than 35 days, use manual snapshots. Manual snapshots are similar to taking EBS snapshots, except you manage them in the RDS console. These are backups that you can initiate at any time, that exist until you delete them.  
+
+For example, to meet a compliance requirement that mandates you to keep database backups for a year, you would need to use manual snapshots to ensure those backups are retained for that period of time.  
+
+If you restore data from a manual snapshot, it creates a new DB instance using the data from the snapshot.
+
+![Snapshots](resources/snapshots.png)
+
+### Which Backup Option Should I Use?
+The answer, almost always, is both. Automated backups are beneficial for the point-in-time recovery. Manual snapshots allow you to retain backups for longer than 35 days.  
+
+### Get Redundancy with Amazon RDS Multi-AZ
+When you enable Amazon RDS Multi-AZ, Amazon RDS creates a redundant copy of your database in another AZ. You end up with two copies of your database: a primary copy in a subnet in one AZ and a standby copy in a subnet in a second AZ.   
+
+The primary copy of your database provides access to your data so that applications can query and display that information.   
+
+The data in the primary copy is synchronously replicated to the standby copy. The standby copy is not considered an active database, and does not get queried by applications.  
+
+To improve availability, Amazon RDS Multi-AZ ensures that you have two copies of your database running and that one of them is in the primary role. If there’s an availability issue, such as the primary database losing connectivity, Amazon RDS triggers an automatic failover.  
+
+When you create a DB instance, a domain name system (DNS) name is provided. AWS uses that DNS name to failover to the standby database. In an automatic failover, the standby database is promoted to the primary role and queries are redirected to the new primary database.   
+
+To ensure that you don’t lose Multi-AZ configuration, a new standby database is created by either: 
+
+- Demoting the previous primary to standby if it’s still up and running
+
+- Or standing up a new standby DB instance
+
+The reason you can select multiple subnets for an Amazon RDS database is because of the Multi-AZ configuration. You’ll want to ensure that you have used subnets in different AZs for your primary and standby copies.
 # Module 4: Monitoring and Optimization
+
+
