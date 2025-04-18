@@ -1,3 +1,5 @@
+# AWS Cloud Support Associate
+[![Course 2 Certificate](Resources/course2_cert.png)](https://coursera.org/share/59efd29dc66207e797127c5485dde392)
 # Module 1: AWS Overview and Security
 ## What is AWS?
 
