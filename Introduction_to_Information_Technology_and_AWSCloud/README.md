@@ -1,5 +1,5 @@
 # Introduction to Information Technology and AWS Cloud
-
+[![Course 1 Certificate](images/course1_cert.png)](https://coursera.org/share/f25003d7b0a85cc6ad342cf2b05a0ccb)
 # Module 1: Foundational IT Knowledge
 
 ## Computer basics
