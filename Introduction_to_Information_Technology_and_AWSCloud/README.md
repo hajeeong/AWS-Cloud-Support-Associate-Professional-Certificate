@@ -1,3 +1,5 @@
+# Introduction to Information Technology and AWS Cloud
+
 # Module 1: Foundational IT Knowledge
 
 ## Computer basics
@@ -385,7 +387,7 @@ The internet’s DNS system works much like a phone book by managing the mapping
 A DNS service, such as Amazon Route 53, is a globally distributed service for translating domain names (such as www.example.com) into IP addresses (such as 192.0.2.1). For more information, see [Amazon Route 53.](https://aws.amazon.com/route53/)
 
 The following diagram gives an overview of how recursive and authoritative DNS services work together to route an end user to a website or application. This process is usually done in milliseconds!
-![Internet and DNS](internetDNS.png)
+![Internet and DNS](images/internetDNS.png)
 
 1. A user opens a web browser, enters www.example.com in the address bar, and presses Enter.
 
@@ -515,7 +517,7 @@ It’s important to understand the concept of ports because firewalls use ports 
 - Is a private networking space in AWS to host resources
 - Defines the range of private IP addresses for your VPC
 
-![Public Cloud Compnents](Public_Cloud_Components.png)
+![Public Cloud Compnents](images/Public_Cloud_Components.png)
 
 ## AWS Cloud basics
 What is cloud computing?
