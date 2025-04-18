@@ -1,3 +1,5 @@
+# Skills and Best Practices for Cloud Support Associates
+[![Course 3 Certificate](images/course3_cert.png)](https://coursera.org/share/de1951f78219d1284a906b66a0e7bb52)
 # Module 1: Understanding the Cloud Support Associate Role
 ## Improving Communication Skills
 Throughout this course we have emphasized how written and verbal communication skills are extremely important to be successful as a cloud support associate.  Where technical skills meets human interaction, communication is the bridge that connects your customers to the solutions to their problems. Whether it's troubleshooting a server issue or guiding a client through a software update, effective communication skills are essential for success. 
