@@ -225,6 +225,100 @@ Suppose you have a MySQL database and you want to maintain a daily copy of all d
 
 The ```mysqldump``` command creates the backup, ```-u root``` specifies the MySQL username, and ```-pYourPassword``` specifies the MySQL password. Note, there is no space between ```-p``` and the password. Lastly, you provide the name of your database and redirect the output of ```mysqldump``` to the specific file ```/path/to/backup/database_name.sql```.
 
-
 # Module 3: Network Troubleshooting
+## IPv4 vs. IPv6
+
+There are two main types of IP addresses in use today: IPv4 and IPv6. 
+
+### IPv4 addresses
+
+IPv4 stands for Internet Protocol version 4. It’s the fourth version of the Internet Protocol and was the first version to be widely deployed.  
+
+IPv4 is the older, commonly-used protocol with a 32-bit address space. IPv4 is typically represented in a decimal format, divided into four blocks, and separated by dots. Each part of the address (called an octet) ranges from 0 to 255.
+
+192.168.1.1 is an example of an IPv4 address.  
+
+Why is IPv4 still in use, you may wonder? IPv4 has been around since the early days of the Internet, and a lot of infrastructure is built around it. Many organizations have significant investments in IPv4. Upgrading their infrastructure can be costly and complex, requiring to replace or reconfigure hardware, update software, and retrain staff. 
+
+However, IPv4 addresses have some limitations. The limitations include a restricted number of possible address combinations, manual setup, security through additional protocols (IPsec), larger routing tables due to non-hierarchical address allocation, and more. 
+
+In total, there are around 4.3 billion IPv4 addresses. To extend usability of IPv4 addresses, you can use techniques, such as NAT (Network Address Translation), that allow multiple devices on a local network to share a single public IPv4 address.
+
+### IPv6 addresses 
+
+IPv6 is the newer protocol designed to address the limitations of IPv4, providing a more scalable and efficient network protocol.  
+
+IPv6 stands for Internet Protocol version 6. This version was developed to address the shortage of IPv4 addresses and to add enhancements in areas such as routing and network configurations. 
+
+IPv6 addresses are 128-bit numbers. They are represented in hexadecimal format, divided into eight groups of four hexadecimal digits, and separated by colons.
+
+2001:0db8:85a3:0000:0000:8a2e:0370:7334 is an example of an IPv6 address. 
+
+This format allows for a virtually unlimited number of unique addresses, effectively solving the shortage of IPv4 addresses. 
+
+IPv6 also includes improvements in areas of security. To be more specific, IPv6 has a built-in support for IPsec (Internet Protocol Security). This ensures end-to-end communication, providing data integrity, authentication, and confidentiality. 
+
+In addition to built-in security, IPv6 supports more efficient routing and automatic configuration. Because of these improvements, IPv6 is widely used for modern networking needs, such as IoT (Internet of Things), mobile networks, and large-scale deployments.
+
+### Transition mechanisms 
+
+IPv4 and IPv6 are not directly compatible. There are several transition mechanisms that allow you to use both protocols as you gradually transition from IPv4 to IPv6.
+
+- Dual stack: With this method, each device has both an IPv4 and an IPv6 address. Devices can communicate using either protocol as needed.
+
+- Tunneling: This method encapsulates IPv6 packets within IPv4 packets, allowing IPv6 traffic to be transmitted over existing IPv4 infrastructure. 
+
+- Translation: This method enables communication between IPv4 and IPv6 by converting packets from one protocol to the other.
+
+## Networking Take Away
+
+21 (TCP, UDP) - FTP - File Transfer Protocol
+
+22 (TCP, UDP) - SSH - Secure Shell
+
+23 (TCP) - Telnet
+
+25 (TCP) - SMTP - Simple Mail Transfer Protocol
+
+53 (TCP, UDP) - DNS - Domain Name System
+
+67, 68 (UDP) - DHCP - Dynamic Host Configuration Protocol
+
+80 (TCP) - HTTP - Hypertext Transfer Protocol
+
+110 (TCP) - POP3 - Post Office Protocol
+
+111, 2049 (TCP, UDP) - NFS - Network File System
+
+137 (TCP, UDP) - NetBIOS - Network Basic Input / Output System
+
+143 (TCP, UDP) - IMAP - Internet Message Access Protocol
+
+161, 162 (UDP) - SNMP - Simple Network Management Protocol
+
+443 (TCP) - HTTPS - Hypertext Transfer Protocol Secure
+
+587 (TCP) - SMTP - Simple Mail Transfer Protocol
+
+993 (TCP) – IMAPS – Internet Message Access Protocol
+
+3306 (TCP) - MySQL
+
+3389 (RCP, UDP) – RDP – Remote Desktop Protocol
+
+5432 (TCP) - PostgreSQL
+
+5439 (TCP) - Redshift
+
+## Amazon Route 53
+- Register or transfer domain names
+- Create public and private hosted zones
+- Route internet traffic to the resources for your domain
+- Check the health of your resources
+
+## DNS record types
+- An A record maps a domain name to an IPv4 address
+- A CNAME record points your domain name to antoher domain or subdomain
+- An alias record routes traffic to selected AWS resources
+
 # Module 4: Troubleshooting Scenarios
