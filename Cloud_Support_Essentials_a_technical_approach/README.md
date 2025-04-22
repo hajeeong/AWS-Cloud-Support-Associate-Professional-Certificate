@@ -1,3 +1,6 @@
+# Cloud Support Essentials: A Technical Approach
+[![Certification](images/cert.png)](https://coursera.org/share/aae0faadee687dc39da24f7c7ccd4340)
+
 # Module 1: Linux Command Line
 ## CLI Basics
 pwd: stands for "present working directory", will show us where we are on the computer. Now, this is called the Home Directory, and every user is gonna get one of these. And in general, it's only accessible by your specific user account. You can kind of think of this like your home base. It's where you're gonna wanna store your files, documents, pictures, applications, and really whatever else you wanna put on a computer. 
@@ -322,3 +325,16 @@ IPv4 and IPv6 are not directly compatible. There are several transition mechanis
 - An alias record routes traffic to selected AWS resources
 
 # Module 4: Troubleshooting Scenarios
+
+## DNS Problems
+
+### To diagnose issues, we'll use:
+- ping
+- host
+- dig
+
+### Dig command options:
+- @server: Queries the specified DNS server
+- -t type: Sets the query type
+- +short: Provides a short output
+- -p port: Uses the specified port number
